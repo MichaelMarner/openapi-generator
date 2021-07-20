@@ -2,6 +2,10 @@
 import 'dart:async';
 
 {{#useBuiltValue}}import 'package:built_value/serializer.dart';{{/useBuiltValue}}
+{{#useJsonSerializable}}
+import 'dart:convert';
+import 'package:{{pubName}}/src/deserialize.dart';
+{{/useJsonSerializable}}
 import 'package:dio/dio.dart';
 
 {{#operations}}
@@ -87,7 +91,7 @@ class {{classname}} {
 
     final _queryParameters = <String, dynamic>{
       {{#queryParams}}
-      {{^required}}{{^isNullable}}if ({{{paramName}}} != null) {{/isNullable}}{{/required}}r'{{baseName}}': {{#useBuiltValue}}{{>serialization/built_value/query_param}}{{/useBuiltValue}},
+      {{^required}}{{^isNullable}}if ({{{paramName}}} != null) {{/isNullable}}{{/required}}r'{{baseName}}': {{#useBuiltValue}}{{>serialization/built_value/query_param}}{{/useBuiltValue}}{{#useJsonSerializable}}{{{paramName}}}{{/useJsonSerializable}},
       {{/queryParams}}
     };{{/hasQueryParams}}{{#hasBodyOrFormParams}}
 
@@ -95,6 +99,7 @@ class {{classname}} {
 
     try {
 {{#useBuiltValue}}{{>serialization/built_value/serialize}}{{/useBuiltValue}}
+{{#useJsonSerializable}}{{#bodyParam}}_bodyData=jsonEncode({{{paramName}}});{{/bodyParam}}{{/useJsonSerializable}}
     } catch(error, stackTrace) {
       throw DioError(
          requestOptions: _options.compose(
@@ -122,6 +127,8 @@ class {{classname}} {
 
     try {
 {{#useBuiltValue}}{{>serialization/built_value/deserialize}}{{/useBuiltValue}}
+{{#useJsonSerializable}}
+_responseData = deserialize<{{{returnType}}}, {{{returnBaseType}}}>(_response.data!, '{{{returnType}}}', growable: true);{{/useJsonSerializable}}
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,

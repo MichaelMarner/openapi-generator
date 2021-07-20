@@ -44,6 +44,7 @@ public class DartDioNextClientCodegen extends AbstractDartCodegen {
     public static final String DATE_LIBRARY_DEFAULT = DATE_LIBRARY_CORE;
 
     public static final String SERIALIZATION_LIBRARY_BUILT_VALUE = "built_value";
+    public static final String SERIALIZATION_LIBRARY_JSON_SERIALIZABLE = "json_serializable";
     public static final String SERIALIZATION_LIBRARY_DEFAULT = SERIALIZATION_LIBRARY_BUILT_VALUE;
 
     private static final String DIO_IMPORT = "package:dio/dio.dart";
@@ -74,6 +75,7 @@ public class DartDioNextClientCodegen extends AbstractDartCodegen {
         modelPackage = "lib.src.model";
 
         supportedLibraries.put(SERIALIZATION_LIBRARY_BUILT_VALUE, "[DEFAULT] built_value");
+        supportedLibraries.put(SERIALIZATION_LIBRARY_JSON_SERIALIZABLE, "json_serializable");
         final CliOption serializationLibrary = CliOption.newString(CodegenConstants.SERIALIZATION_LIBRARY, "Specify serialization library");
         serializationLibrary.setEnum(supportedLibraries);
         serializationLibrary.setDefault(SERIALIZATION_LIBRARY_DEFAULT);
@@ -166,6 +168,10 @@ public class DartDioNextClientCodegen extends AbstractDartCodegen {
 
     private void configureSerializationLibrary(String srcFolder) {
         switch (library) {
+            case SERIALIZATION_LIBRARY_JSON_SERIALIZABLE:
+                additionalProperties.put("useJsonSerializable", "true");
+                configureSerializationLibraryJsonSerializable(srcFolder);
+                break;
             default:
             case SERIALIZATION_LIBRARY_BUILT_VALUE:
                 additionalProperties.put("useBuiltValue", "true");
@@ -196,6 +202,18 @@ public class DartDioNextClientCodegen extends AbstractDartCodegen {
         imports.put("MultipartFile", DIO_IMPORT);
     }
 
+    private void configureSerializationLibraryJsonSerializable(String srcFolder) {
+        supportingFiles.add(new SupportingFile("build.yaml.mustache", "" /* main project dir */, "build.yaml"));
+        supportingFiles.add(new SupportingFile("serialization/json_serializable/deserialize.mustache", srcFolder,
+                "deserialize.dart"));
+
+        // most of these are defined in AbstractDartCodegen, we are overriding
+        // just the binary / file handling
+        languageSpecificPrimitives.add("Object");
+        imports.put("Uint8List", "dart:typed_data");
+        imports.put("MultipartFile", DIO_IMPORT);
+    }
+
     private void configureDateLibrary(String srcFolder) {
         switch (dateLibrary) {
             case DATE_LIBRARY_TIME_MACHINE:
@@ -217,6 +235,7 @@ public class DartDioNextClientCodegen extends AbstractDartCodegen {
                     typeMapping.put("date", "Date");
                     typeMapping.put("Date", "Date");
                     importMapping.put("Date", "package:" + pubName + "/src/model/date.dart");
+
                     supportingFiles.add(new SupportingFile("serialization/built_value/date.mustache", srcFolder + File.separator + "model", "date.dart"));
                     supportingFiles.add(new SupportingFile("serialization/built_value/date_serializer.mustache", srcFolder, "date_serializer.dart"));
                 }
@@ -334,29 +353,34 @@ public class DartDioNextClientCodegen extends AbstractDartCodegen {
                 op.imports.remove("Uint8List");
             }
 
-            for (CodegenParameter param : op.bodyParams) {
-                if (param.isContainer) {
+            resultImports.addAll(rewriteImports(op.imports, false));
+
+            if (SERIALIZATION_LIBRARY_BUILT_VALUE.equals(library)) {
+
+                for (CodegenParameter param : op.bodyParams) {
+                    if (param.isContainer) {
+                        final Map<String, Object> serializer = new HashMap<>();
+                        serializer.put("isArray", param.isArray);
+                        serializer.put("uniqueItems", param.uniqueItems);
+                        serializer.put("isMap", param.isMap);
+                        serializer.put("baseType", param.baseType);
+                        serializers.add(serializer);
+                    }
+                }
+
+                if (op.getHasFormParams() || op.getHasQueryParams()) {
+                    resultImports.add("package:" + pubName + "/src/api_util.dart");
+                }
+
+                if (op.returnContainer != null) {
                     final Map<String, Object> serializer = new HashMap<>();
-                    serializer.put("isArray", param.isArray);
-                    serializer.put("uniqueItems", param.uniqueItems);
-                    serializer.put("isMap", param.isMap);
-                    serializer.put("baseType", param.baseType);
+                    serializer.put("isArray",
+                            Objects.equals("array", op.returnContainer) || Objects.equals("set", op.returnContainer));
+                    serializer.put("uniqueItems", op.uniqueItems);
+                    serializer.put("isMap", Objects.equals("map", op.returnContainer));
+                    serializer.put("baseType", op.returnBaseType);
                     serializers.add(serializer);
                 }
-            }
-
-            resultImports.addAll(rewriteImports(op.imports, false));
-            if (op.getHasFormParams() || op.getHasQueryParams()) {
-                resultImports.add("package:" + pubName + "/src/api_util.dart");
-            }
-
-            if (op.returnContainer != null) {
-                final Map<String, Object> serializer = new HashMap<>();
-                serializer.put("isArray", Objects.equals("array", op.returnContainer) || Objects.equals("set", op.returnContainer));
-                serializer.put("uniqueItems", op.uniqueItems);
-                serializer.put("isMap", Objects.equals("map", op.returnContainer));
-                serializer.put("baseType", op.returnBaseType);
-                serializers.add(serializer);
             }
         }
 
