@@ -25,14 +25,14 @@ class AdditionalPropertiesClass {
     name: r'map_property',
     required: false,
   )
-  Map<String, String> mapProperty;
+  Map<String, String>? mapProperty;
 
   @JsonKey(
     
     name: r'map_of_map_property',
     required: false,
   )
-  Map<String, Map<String, String>> mapOfMapProperty;
+  Map<String, Map<String, String>>? mapOfMapProperty;
 
   @override
   bool operator ==(Object other) => identical(this, other) || other is AdditionalPropertiesClass &&

@@ -24,7 +24,7 @@ class NumberOnly {
     name: r'JustNumber',
     required: false,
   )
-  num justNumber;
+  num? justNumber;
 
   @override
   bool operator ==(Object other) => identical(this, other) || other is NumberOnly &&

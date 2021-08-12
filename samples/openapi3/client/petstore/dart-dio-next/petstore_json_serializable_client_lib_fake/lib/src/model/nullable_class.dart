@@ -16,17 +16,17 @@ part 'nullable_class.g.dart';
 class NullableClass {
   /// Returns a new [NullableClass] instance.
   NullableClass({
-    this.integerProp,
-    this.numberProp,
-    this.booleanProp,
-    this.stringProp,
-    this.dateProp,
-    this.datetimeProp,
-    this.arrayNullableProp,
-    this.arrayAndItemsNullableProp,
+     this.integerProp,
+     this.numberProp,
+     this.booleanProp,
+     this.stringProp,
+     this.dateProp,
+     this.datetimeProp,
+     this.arrayNullableProp,
+     this.arrayAndItemsNullableProp,
     required this.arrayItemsNullable,
-    this.objectNullableProp,
-    this.objectAndItemsNullableProp,
+     this.objectNullableProp,
+     this.objectAndItemsNullableProp,
     required this.objectItemsNullable,
   });
 
@@ -91,7 +91,7 @@ class NullableClass {
     name: r'array_items_nullable',
     required: false,
   )
-  List<Object> arrayItemsNullable;
+  List<Object>? arrayItemsNullable;
 
   @JsonKey(
     
@@ -112,7 +112,7 @@ class NullableClass {
     name: r'object_items_nullable',
     required: false,
   )
-  Map<String, Object> objectItemsNullable;
+  Map<String, Object>? objectItemsNullable;
 
   @override
   bool operator ==(Object other) => identical(this, other) || other is NullableClass &&

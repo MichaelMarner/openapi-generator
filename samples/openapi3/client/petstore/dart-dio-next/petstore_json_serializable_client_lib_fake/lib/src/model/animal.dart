@@ -17,7 +17,7 @@ class Animal {
   /// Returns a new [Animal] instance.
   Animal({
     required this.className,
-    this.color = 'red',
+     this.color = 'red',
   });
 
   @JsonKey(
@@ -32,7 +32,7 @@ class Animal {
     name: r'color',
     required: false,
   )
-  String color;
+  String? color;
 
   @override
   bool operator ==(Object other) => identical(this, other) || other is Animal &&

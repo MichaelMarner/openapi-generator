@@ -24,7 +24,7 @@ class DogAllOf {
     name: r'breed',
     required: false,
   )
-  String breed;
+  String? breed;
 
   @override
   bool operator ==(Object other) => identical(this, other) || other is DogAllOf &&

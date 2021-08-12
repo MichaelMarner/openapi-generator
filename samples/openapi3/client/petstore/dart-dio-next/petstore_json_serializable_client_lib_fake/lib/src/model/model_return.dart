@@ -24,7 +24,7 @@ class ModelReturn {
     name: r'return',
     required: false,
   )
-  int return_;
+  int? return_;
 
   @override
   bool operator ==(Object other) => identical(this, other) || other is ModelReturn &&

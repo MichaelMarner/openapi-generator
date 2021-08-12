@@ -27,28 +27,28 @@ class MapTest {
     name: r'map_map_of_string',
     required: false,
   )
-  Map<String, Map<String, String>> mapMapOfString;
+  Map<String, Map<String, String>>? mapMapOfString;
 
   @JsonKey(
     
     name: r'map_of_enum_string',
     required: false,
   )
-  Map<String, MapTestMapOfEnumStringEnum> mapOfEnumString;
+  Map<String, MapTestMapOfEnumStringEnum>? mapOfEnumString;
 
   @JsonKey(
     
     name: r'direct_map',
     required: false,
   )
-  Map<String, bool> directMap;
+  Map<String, bool>? directMap;
 
   @JsonKey(
     
     name: r'indirect_map',
     required: false,
   )
-  Map<String, bool> indirectMap;
+  Map<String, bool>? indirectMap;
 
   @override
   bool operator ==(Object other) => identical(this, other) || other is MapTest &&

@@ -25,14 +25,14 @@ class Tag {
     name: r'id',
     required: false,
   )
-  int id;
+  int? id;
 
   @JsonKey(
     
     name: r'name',
     required: false,
   )
-  String name;
+  String? name;
 
   @override
   bool operator ==(Object other) => identical(this, other) || other is Tag &&

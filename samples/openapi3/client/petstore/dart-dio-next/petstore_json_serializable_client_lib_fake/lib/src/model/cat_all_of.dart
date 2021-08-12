@@ -24,7 +24,7 @@ class CatAllOf {
     name: r'declawed',
     required: false,
   )
-  bool declawed;
+  bool? declawed;
 
   @override
   bool operator ==(Object other) => identical(this, other) || other is CatAllOf &&

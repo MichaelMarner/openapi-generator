@@ -24,7 +24,7 @@ class ArrayOfArrayOfNumberOnly {
     name: r'ArrayArrayNumber',
     required: false,
   )
-  List<List<num>> arrayArrayNumber;
+  List<List<num>>? arrayArrayNumber;
 
   @override
   bool operator ==(Object other) => identical(this, other) || other is ArrayOfArrayOfNumberOnly &&

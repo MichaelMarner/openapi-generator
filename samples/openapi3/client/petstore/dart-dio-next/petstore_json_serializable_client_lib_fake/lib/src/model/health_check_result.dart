@@ -16,7 +16,7 @@ part 'health_check_result.g.dart';
 class HealthCheckResult {
   /// Returns a new [HealthCheckResult] instance.
   HealthCheckResult({
-    this.nullableMessage,
+     this.nullableMessage,
   });
 
   @JsonKey(

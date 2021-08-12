@@ -25,7 +25,7 @@ class File {
     name: r'sourceURI',
     required: false,
   )
-  String sourceURI;
+  String? sourceURI;
 
   @override
   bool operator ==(Object other) => identical(this, other) || other is File &&

@@ -17,7 +17,7 @@ class Category {
   /// Returns a new [Category] instance.
   Category({
     required this.id,
-    this.name = 'default-name',
+     this.name = 'default-name',
   });
 
   @JsonKey(
@@ -25,7 +25,7 @@ class Category {
     name: r'id',
     required: false,
   )
-  int id;
+  int? id;
 
   @JsonKey(
     defaultValue: 'default-name',

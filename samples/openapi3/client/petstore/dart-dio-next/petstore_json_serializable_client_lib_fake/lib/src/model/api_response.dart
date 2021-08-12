@@ -26,21 +26,21 @@ class ApiResponse {
     name: r'code',
     required: false,
   )
-  int code;
+  int? code;
 
   @JsonKey(
     
     name: r'type',
     required: false,
   )
-  String type;
+  String? type;
 
   @JsonKey(
     
     name: r'message',
     required: false,
   )
-  String message;
+  String? message;
 
   @override
   bool operator ==(Object other) => identical(this, other) || other is ApiResponse &&

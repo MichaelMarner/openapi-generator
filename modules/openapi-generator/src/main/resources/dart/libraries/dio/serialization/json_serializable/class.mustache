@@ -29,11 +29,12 @@ class {{{classname}}} {
     name: r'{{{baseName}}}',
     required: {{#required}}true{{/required}}{{^required}}false{{/required}},
   )
+  {{{datatypeWithEnum}}}{{#isNullable}}?{{/isNullable}}{{^isNullable}}{{^required}}?{{/required}}{{/isNullable}} {{{name}}};
   {{/isBinary}}
   {{#isBinary}}
   @JsonKey(ignore: true)
+  {{{datatypeWithEnum}}}? {{{name}}};
   {{/isBinary}}
-  {{{datatypeWithEnum}}}{{#isNullable}}?{{/isNullable}} {{{name}}};
 
 {{/vars}}
   @override

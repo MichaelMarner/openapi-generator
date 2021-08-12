@@ -26,7 +26,7 @@ class FormatTest {
     required this.decimal,
     required this.string,
     required this.byte,
-    required this.binary,
+     this.binary,
     required this.date,
     required this.dateTime,
     required this.uuid,
@@ -42,7 +42,7 @@ class FormatTest {
     name: r'integer',
     required: false,
   )
-  int integer;
+  int? integer;
 
           // minimum: 20
           // maximum: 200
@@ -51,14 +51,14 @@ class FormatTest {
     name: r'int32',
     required: false,
   )
-  int int32;
+  int? int32;
 
   @JsonKey(
     
     name: r'int64',
     required: false,
   )
-  int int64;
+  int? int64;
 
           // minimum: 32.1
           // maximum: 543.2
@@ -76,7 +76,7 @@ class FormatTest {
     name: r'float',
     required: false,
   )
-  double float;
+  double? float;
 
           // minimum: 67.8
           // maximum: 123.4
@@ -85,21 +85,21 @@ class FormatTest {
     name: r'double',
     required: false,
   )
-  double double_;
+  double? double_;
 
   @JsonKey(
     
     name: r'decimal',
     required: false,
   )
-  double decimal;
+  double? decimal;
 
   @JsonKey(
     
     name: r'string',
     required: false,
   )
-  String string;
+  String? string;
 
   @JsonKey(
     
@@ -109,7 +109,7 @@ class FormatTest {
   String byte;
 
   @JsonKey(ignore: true)
-  MultipartFile binary;
+  MultipartFile? binary;
 
   @JsonKey(
     
@@ -123,14 +123,14 @@ class FormatTest {
     name: r'dateTime',
     required: false,
   )
-  DateTime dateTime;
+  DateTime? dateTime;
 
   @JsonKey(
     
     name: r'uuid',
     required: false,
   )
-  String uuid;
+  String? uuid;
 
   @JsonKey(
     
@@ -145,7 +145,7 @@ class FormatTest {
     name: r'pattern_with_digits',
     required: false,
   )
-  String patternWithDigits;
+  String? patternWithDigits;
 
       /// A string starting with 'image_' (case insensitive) and one to three digits following i.e. Image_01.
   @JsonKey(
@@ -153,7 +153,7 @@ class FormatTest {
     name: r'pattern_with_digits_and_delimiter',
     required: false,
   )
-  String patternWithDigitsAndDelimiter;
+  String? patternWithDigitsAndDelimiter;
 
   @override
   bool operator ==(Object other) => identical(this, other) || other is FormatTest &&

@@ -19,7 +19,7 @@ class Cat {
   /// Returns a new [Cat] instance.
   Cat({
     required this.className,
-    this.color = 'red',
+     this.color = 'red',
     required this.declawed,
   });
 
@@ -35,14 +35,14 @@ class Cat {
     name: r'color',
     required: false,
   )
-  String color;
+  String? color;
 
   @JsonKey(
     
     name: r'declawed',
     required: false,
   )
-  bool declawed;
+  bool? declawed;
 
   @override
   bool operator ==(Object other) => identical(this, other) || other is Cat &&

@@ -19,7 +19,7 @@ class Dog {
   /// Returns a new [Dog] instance.
   Dog({
     required this.className,
-    this.color = 'red',
+     this.color = 'red',
     required this.breed,
   });
 
@@ -35,14 +35,14 @@ class Dog {
     name: r'color',
     required: false,
   )
-  String color;
+  String? color;
 
   @JsonKey(
     
     name: r'breed',
     required: false,
   )
-  String breed;
+  String? breed;
 
   @override
   bool operator ==(Object other) => identical(this, other) || other is Dog &&

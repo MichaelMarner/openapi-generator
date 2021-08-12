@@ -29,35 +29,35 @@ class Capitalization {
     name: r'smallCamel',
     required: false,
   )
-  String smallCamel;
+  String? smallCamel;
 
   @JsonKey(
     
     name: r'CapitalCamel',
     required: false,
   )
-  String capitalCamel;
+  String? capitalCamel;
 
   @JsonKey(
     
     name: r'small_Snake',
     required: false,
   )
-  String smallSnake;
+  String? smallSnake;
 
   @JsonKey(
     
     name: r'Capital_Snake',
     required: false,
   )
-  String capitalSnake;
+  String? capitalSnake;
 
   @JsonKey(
     
     name: r'SCA_ETH_Flow_Points',
     required: false,
   )
-  String sCAETHFlowPoints;
+  String? sCAETHFlowPoints;
 
       /// Name of the pet 
   @JsonKey(
@@ -65,7 +65,7 @@ class Capitalization {
     name: r'ATT_NAME',
     required: false,
   )
-  String ATT_NAME;
+  String? ATT_NAME;
 
   @override
   bool operator ==(Object other) => identical(this, other) || other is Capitalization &&

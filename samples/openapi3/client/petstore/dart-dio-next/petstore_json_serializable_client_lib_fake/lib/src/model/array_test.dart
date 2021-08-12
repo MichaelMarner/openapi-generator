@@ -27,21 +27,21 @@ class ArrayTest {
     name: r'array_of_string',
     required: false,
   )
-  List<String> arrayOfString;
+  List<String>? arrayOfString;
 
   @JsonKey(
     
     name: r'array_array_of_integer',
     required: false,
   )
-  List<List<int>> arrayArrayOfInteger;
+  List<List<int>>? arrayArrayOfInteger;
 
   @JsonKey(
     
     name: r'array_array_of_model',
     required: false,
   )
-  List<List<ReadOnlyFirst>> arrayArrayOfModel;
+  List<List<ReadOnlyFirst>>? arrayArrayOfModel;
 
   @override
   bool operator ==(Object other) => identical(this, other) || other is ArrayTest &&
