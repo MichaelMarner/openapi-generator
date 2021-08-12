@@ -130,7 +130,6 @@ void main() {
             Headers.contentLengthHeader: Matchers.integer,
           },
         );
-
         final response = await client.getPetApi().addPet(
             pet: Pet()
               ..id = 5

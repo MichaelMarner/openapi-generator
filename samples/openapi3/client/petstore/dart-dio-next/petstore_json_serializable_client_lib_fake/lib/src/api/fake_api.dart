@@ -146,6 +146,7 @@ _responseData = deserialize<HealthCheckResult, HealthCheckResult>(_response.data
     try {
 
 _bodyData=jsonEncode(pet);
+
     } catch(error, stackTrace) {
       throw DioError(
          requestOptions: _options.compose(
@@ -212,7 +213,8 @@ _bodyData=jsonEncode(pet);
 
     try {
 
-_bodyData=jsonEncode(body);
+_bodyData = body;
+
     } catch(error, stackTrace) {
       throw DioError(
          requestOptions: _options.compose(
@@ -301,6 +303,7 @@ _responseData = deserialize<bool, bool>(_response.data!, 'bool', growable: true)
     try {
 
 _bodyData=jsonEncode(outerComposite);
+
     } catch(error, stackTrace) {
       throw DioError(
          requestOptions: _options.compose(
@@ -388,7 +391,8 @@ _responseData = deserialize<OuterComposite, OuterComposite>(_response.data!, 'Ou
 
     try {
 
-_bodyData=jsonEncode(body);
+_bodyData = body;
+
     } catch(error, stackTrace) {
       throw DioError(
          requestOptions: _options.compose(
@@ -476,7 +480,8 @@ _responseData = deserialize<num, num>(_response.data!, 'num', growable: true);
 
     try {
 
-_bodyData=jsonEncode(body);
+_bodyData = body;
+
     } catch(error, stackTrace) {
       throw DioError(
          requestOptions: _options.compose(
@@ -565,6 +570,7 @@ _responseData = deserialize<String, String>(_response.data!, 'String', growable:
     try {
 
 _bodyData=jsonEncode(outerObjectWithEnumProperty);
+
     } catch(error, stackTrace) {
       throw DioError(
          requestOptions: _options.compose(
@@ -652,7 +658,8 @@ _responseData = deserialize<OuterObjectWithEnumProperty, OuterObjectWithEnumProp
 
     try {
 
-_bodyData=jsonEncode(body);
+_bodyData = body;
+
     } catch(error, stackTrace) {
       throw DioError(
          requestOptions: _options.compose(
@@ -718,6 +725,7 @@ _bodyData=jsonEncode(body);
     try {
 
 _bodyData=jsonEncode(fileSchemaTestClass);
+
     } catch(error, stackTrace) {
       throw DioError(
          requestOptions: _options.compose(
@@ -789,6 +797,7 @@ _bodyData=jsonEncode(fileSchemaTestClass);
     try {
 
 _bodyData=jsonEncode(user);
+
     } catch(error, stackTrace) {
       throw DioError(
          requestOptions: _options.compose(
@@ -856,6 +865,7 @@ _bodyData=jsonEncode(user);
     try {
 
 _bodyData=jsonEncode(client);
+
     } catch(error, stackTrace) {
       throw DioError(
          requestOptions: _options.compose(
@@ -974,6 +984,22 @@ _responseData = deserialize<Client, Client>(_response.data!, 'Client', growable:
 
     try {
 
+_bodyData = <String, dynamic>{
+  if (integer != null) r'integer':  integer ,
+  if (int32 != null) r'int32':  int32 ,
+  if (int64 != null) r'int64':  int64 ,
+  r'number':  number ,
+  if (float != null) r'float':  float ,
+  r'double':  double_ ,
+  if (string != null) r'string':  string ,
+  r'pattern_without_delimiter':  patternWithoutDelimiter ,
+  r'byte':  byte ,
+  if (binary != null) r'binary': binary,
+  if (date != null) r'date':  date ,
+  if (dateTime != null) r'dateTime':  dateTime ,
+  if (password != null) r'password':  password ,
+  if (callback != null) r'callback':  callback ,
+};
 
     } catch(error, stackTrace) {
       throw DioError(
@@ -1062,6 +1088,10 @@ _responseData = deserialize<Client, Client>(_response.data!, 'Client', growable:
 
     try {
 
+_bodyData = <String, dynamic>{
+  if (enumFormStringArray != null) r'enum_form_string_array':  jsonEncode(enumFormStringArray) ,
+  if (enumFormString != null) r'enum_form_string':  enumFormString ,
+};
 
     } catch(error, stackTrace) {
       throw DioError(
@@ -1202,6 +1232,7 @@ _responseData = deserialize<Client, Client>(_response.data!, 'Client', growable:
     try {
 
 _bodyData=jsonEncode(requestBody);
+
     } catch(error, stackTrace) {
       throw DioError(
          requestOptions: _options.compose(
@@ -1268,6 +1299,10 @@ _bodyData=jsonEncode(requestBody);
 
     try {
 
+_bodyData = <String, dynamic>{
+  r'param':  param ,
+  r'param2':  param2 ,
+};
 
     } catch(error, stackTrace) {
       throw DioError(

@@ -64,6 +64,7 @@ class PetApi {
     try {
 
 _bodyData=jsonEncode(pet);
+
     } catch(error, stackTrace) {
       throw DioError(
          requestOptions: _options.compose(
@@ -427,6 +428,7 @@ _responseData = deserialize<Pet, Pet>(_response.data!, 'Pet', growable: true);
     try {
 
 _bodyData=jsonEncode(pet);
+
     } catch(error, stackTrace) {
       throw DioError(
          requestOptions: _options.compose(
@@ -500,6 +502,10 @@ _bodyData=jsonEncode(pet);
 
     try {
 
+_bodyData = <String, dynamic>{
+  if (name != null) r'name':  name ,
+  if (status != null) r'status':  status ,
+};
 
     } catch(error, stackTrace) {
       throw DioError(
@@ -574,6 +580,10 @@ _bodyData=jsonEncode(pet);
 
     try {
 
+_bodyData = FormData.fromMap(<String, dynamic>{
+  if (additionalMetadata != null) r'additionalMetadata':  additionalMetadata ,
+  if (file != null) r'file': file,
+});
 
     } catch(error, stackTrace) {
       throw DioError(
@@ -671,6 +681,10 @@ _responseData = deserialize<ApiResponse, ApiResponse>(_response.data!, 'ApiRespo
 
     try {
 
+_bodyData = FormData.fromMap(<String, dynamic>{
+  if (additionalMetadata != null) r'additionalMetadata':  additionalMetadata ,
+  r'requiredFile': requiredFile,
+});
 
     } catch(error, stackTrace) {
       throw DioError(

@@ -65,6 +65,7 @@ class FakeClassnameTags123Api {
     try {
 
 _bodyData=jsonEncode(client);
+
     } catch(error, stackTrace) {
       throw DioError(
          requestOptions: _options.compose(

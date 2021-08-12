@@ -58,6 +58,7 @@ class UserApi {
     try {
 
 _bodyData=jsonEncode(user);
+
     } catch(error, stackTrace) {
       throw DioError(
          requestOptions: _options.compose(
@@ -123,6 +124,7 @@ _bodyData=jsonEncode(user);
     try {
 
 _bodyData=jsonEncode(user);
+
     } catch(error, stackTrace) {
       throw DioError(
          requestOptions: _options.compose(
@@ -188,6 +190,7 @@ _bodyData=jsonEncode(user);
     try {
 
 _bodyData=jsonEncode(user);
+
     } catch(error, stackTrace) {
       throw DioError(
          requestOptions: _options.compose(
@@ -495,6 +498,7 @@ _responseData = deserialize<String, String>(_response.data!, 'String', growable:
     try {
 
 _bodyData=jsonEncode(user);
+
     } catch(error, stackTrace) {
       throw DioError(
          requestOptions: _options.compose(

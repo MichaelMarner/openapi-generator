@@ -250,6 +250,7 @@ _responseData = deserialize<Order, Order>(_response.data!, 'Order', growable: tr
     try {
 
 _bodyData=jsonEncode(order);
+
     } catch(error, stackTrace) {
       throw DioError(
          requestOptions: _options.compose(
