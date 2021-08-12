@@ -25,14 +25,14 @@ class Animal {
     name: r'className',
     required: true,
   )
-  String? className;
+  String className;
 
   @JsonKey(
     defaultValue: 'red',
     name: r'color',
     required: false,
   )
-  String? color;
+  String color;
 
   @override
   bool operator ==(Object other) => identical(this, other) || other is Animal &&

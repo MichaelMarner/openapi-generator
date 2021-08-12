@@ -35,84 +35,84 @@ class NullableClass {
     name: r'integer_prop',
     required: false,
   )
-  int integerProp;
+  int? integerProp;
 
   @JsonKey(
     
     name: r'number_prop',
     required: false,
   )
-  num numberProp;
+  num? numberProp;
 
   @JsonKey(
     
     name: r'boolean_prop',
     required: false,
   )
-  bool booleanProp;
+  bool? booleanProp;
 
   @JsonKey(
     
     name: r'string_prop',
     required: false,
   )
-  String stringProp;
+  String? stringProp;
 
   @JsonKey(
     
     name: r'date_prop',
     required: false,
   )
-  DateTime dateProp;
+  DateTime? dateProp;
 
   @JsonKey(
     
     name: r'datetime_prop',
     required: false,
   )
-  DateTime datetimeProp;
+  DateTime? datetimeProp;
 
   @JsonKey(
     
     name: r'array_nullable_prop',
     required: false,
   )
-  List<Object> arrayNullableProp;
+  List<Object>? arrayNullableProp;
 
   @JsonKey(
     
     name: r'array_and_items_nullable_prop',
     required: false,
   )
-  List<Object> arrayAndItemsNullableProp;
+  List<Object>? arrayAndItemsNullableProp;
 
   @JsonKey(
     
     name: r'array_items_nullable',
     required: false,
   )
-  List<Object>? arrayItemsNullable;
+  List<Object> arrayItemsNullable;
 
   @JsonKey(
     
     name: r'object_nullable_prop',
     required: false,
   )
-  Map<String, Object> objectNullableProp;
+  Map<String, Object>? objectNullableProp;
 
   @JsonKey(
     
     name: r'object_and_items_nullable_prop',
     required: false,
   )
-  Map<String, Object> objectAndItemsNullableProp;
+  Map<String, Object>? objectAndItemsNullableProp;
 
   @JsonKey(
     
     name: r'object_items_nullable',
     required: false,
   )
-  Map<String, Object>? objectItemsNullable;
+  Map<String, Object> objectItemsNullable;
 
   @override
   bool operator ==(Object other) => identical(this, other) || other is NullableClass &&

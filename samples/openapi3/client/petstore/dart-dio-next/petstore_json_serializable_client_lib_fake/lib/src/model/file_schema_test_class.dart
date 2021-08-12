@@ -26,14 +26,14 @@ class FileSchemaTestClass {
     name: r'file',
     required: false,
   )
-  File? file;
+  File file;
 
   @JsonKey(
     
     name: r'files',
     required: false,
   )
-  List<File>? files;
+  List<File> files;
 
   @override
   bool operator ==(Object other) => identical(this, other) || other is FileSchemaTestClass &&

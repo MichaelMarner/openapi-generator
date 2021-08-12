@@ -29,28 +29,28 @@ class Order {
     name: r'id',
     required: false,
   )
-  int? id;
+  int id;
 
   @JsonKey(
     
     name: r'petId',
     required: false,
   )
-  int? petId;
+  int petId;
 
   @JsonKey(
     
     name: r'quantity',
     required: false,
   )
-  int? quantity;
+  int quantity;
 
   @JsonKey(
     
     name: r'shipDate',
     required: false,
   )
-  DateTime? shipDate;
+  DateTime shipDate;
 
       /// Order Status
   @JsonKey(
@@ -58,14 +58,14 @@ class Order {
     name: r'status',
     required: false,
   )
-  OrderStatusEnum? status;
+  OrderStatusEnum status;
 
   @JsonKey(
     defaultValue: false,
     name: r'complete',
     required: false,
   )
-  bool? complete;
+  bool complete;
 
   @override
   bool operator ==(Object other) => identical(this, other) || other is Order &&

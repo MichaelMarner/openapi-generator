@@ -24,7 +24,7 @@ class Client {
     name: r'client',
     required: false,
   )
-  String? client;
+  String client;
 
   @override
   bool operator ==(Object other) => identical(this, other) || other is Client &&

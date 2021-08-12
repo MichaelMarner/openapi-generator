@@ -4,7 +4,7 @@
 
 
 
-enum  {
+enum EnumClass {
   abc,
   efg,
   leftParenthesisXyzRightParenthesis,

@@ -24,7 +24,7 @@ class ModelList {
     name: r'123-list',
     required: false,
   )
-  String? n123list;
+  String n123list;
 
   @override
   bool operator ==(Object other) => identical(this, other) || other is ModelList &&

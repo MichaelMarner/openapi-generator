@@ -24,7 +24,7 @@ class ClassModel {
     name: r'_class',
     required: false,
   )
-  String? class_;
+  String class_;
 
   @override
   bool operator ==(Object other) => identical(this, other) || other is ClassModel &&

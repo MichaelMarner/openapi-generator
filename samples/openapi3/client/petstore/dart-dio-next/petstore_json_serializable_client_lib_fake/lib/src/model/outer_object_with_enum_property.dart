@@ -25,7 +25,7 @@ class OuterObjectWithEnumProperty {
     name: r'value',
     required: true,
   )
-  OuterEnumInteger? value;
+  OuterEnumInteger value;
 
   @override
   bool operator ==(Object other) => identical(this, other) || other is OuterObjectWithEnumProperty &&

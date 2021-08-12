@@ -25,7 +25,7 @@ class InlineResponseDefault {
     name: r'string',
     required: false,
   )
-  Foo? string;
+  Foo string;
 
   @override
   bool operator ==(Object other) => identical(this, other) || other is InlineResponseDefault &&

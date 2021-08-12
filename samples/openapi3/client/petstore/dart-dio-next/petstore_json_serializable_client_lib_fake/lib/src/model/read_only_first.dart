@@ -25,14 +25,14 @@ class ReadOnlyFirst {
     name: r'bar',
     required: false,
   )
-  String? bar;
+  String bar;
 
   @JsonKey(
     
     name: r'baz',
     required: false,
   )
-  String? baz;
+  String baz;
 
   @override
   bool operator ==(Object other) => identical(this, other) || other is ReadOnlyFirst &&

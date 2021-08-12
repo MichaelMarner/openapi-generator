@@ -26,21 +26,21 @@ class OuterComposite {
     name: r'my_number',
     required: false,
   )
-  num? myNumber;
+  num myNumber;
 
   @JsonKey(
     
     name: r'my_string',
     required: false,
   )
-  String? myString;
+  String myString;
 
   @JsonKey(
     
     name: r'my_boolean',
     required: false,
   )
-  bool? myBoolean;
+  bool myBoolean;
 
   @override
   bool operator ==(Object other) => identical(this, other) || other is OuterComposite &&

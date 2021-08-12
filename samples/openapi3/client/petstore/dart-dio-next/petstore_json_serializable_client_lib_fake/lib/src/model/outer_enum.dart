@@ -4,7 +4,7 @@
 
 
 
-enum  {
+enum OuterEnum {
   placed,
   approved,
   delivered,

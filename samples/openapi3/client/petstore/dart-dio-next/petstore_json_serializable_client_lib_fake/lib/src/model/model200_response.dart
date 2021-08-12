@@ -25,14 +25,14 @@ class Model200Response {
     name: r'name',
     required: false,
   )
-  int? name;
+  int name;
 
   @JsonKey(
     
     name: r'class',
     required: false,
   )
-  String? class_;
+  String class_;
 
   @override
   bool operator ==(Object other) => identical(this, other) || other is Model200Response &&

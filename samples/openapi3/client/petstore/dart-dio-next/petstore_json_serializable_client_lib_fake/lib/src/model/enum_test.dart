@@ -35,56 +35,56 @@ class EnumTest {
     name: r'enum_string',
     required: false,
   )
-  EnumTestEnumStringEnum? enumString;
+  EnumTestEnumStringEnum enumString;
 
   @JsonKey(
     
     name: r'enum_string_required',
     required: true,
   )
-  EnumTestEnumStringRequiredEnum? enumStringRequired;
+  EnumTestEnumStringRequiredEnum enumStringRequired;
 
   @JsonKey(
     
     name: r'enum_integer',
     required: false,
   )
-  EnumTestEnumIntegerEnum? enumInteger;
+  EnumTestEnumIntegerEnum enumInteger;
 
   @JsonKey(
     
     name: r'enum_number',
     required: false,
   )
-  EnumTestEnumNumberEnum? enumNumber;
+  EnumTestEnumNumberEnum enumNumber;
 
   @JsonKey(
     
     name: r'outerEnum',
     required: false,
   )
-  OuterEnum outerEnum;
+  OuterEnum? outerEnum;
 
   @JsonKey(
     
     name: r'outerEnumInteger',
     required: false,
   )
-  OuterEnumInteger? outerEnumInteger;
+  OuterEnumInteger outerEnumInteger;
 
   @JsonKey(
     
     name: r'outerEnumDefaultValue',
     required: false,
   )
-  OuterEnumDefaultValue? outerEnumDefaultValue;
+  OuterEnumDefaultValue outerEnumDefaultValue;
 
   @JsonKey(
     
     name: r'outerEnumIntegerDefaultValue',
     required: false,
   )
-  OuterEnumIntegerDefaultValue? outerEnumIntegerDefaultValue;
+  OuterEnumIntegerDefaultValue outerEnumIntegerDefaultValue;
 
   @override
   bool operator ==(Object other) => identical(this, other) || other is EnumTest &&

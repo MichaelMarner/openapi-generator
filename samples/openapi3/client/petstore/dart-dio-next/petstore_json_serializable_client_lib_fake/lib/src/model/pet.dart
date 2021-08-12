@@ -31,35 +31,35 @@ class Pet {
     name: r'id',
     required: false,
   )
-  int? id;
+  int id;
 
   @JsonKey(
     
     name: r'category',
     required: false,
   )
-  Category? category;
+  Category category;
 
   @JsonKey(
     
     name: r'name',
     required: true,
   )
-  String? name;
+  String name;
 
   @JsonKey(
     
     name: r'photoUrls',
     required: true,
   )
-  Set<String>? photoUrls;
+  Set<String> photoUrls;
 
   @JsonKey(
     
     name: r'tags',
     required: false,
   )
-  List<Tag>? tags;
+  List<Tag> tags;
 
       /// pet status in the store
   @JsonKey(
@@ -67,7 +67,7 @@ class Pet {
     name: r'status',
     required: false,
   )
-  PetStatusEnum? status;
+  PetStatusEnum status;
 
   @override
   bool operator ==(Object other) => identical(this, other) || other is Pet &&

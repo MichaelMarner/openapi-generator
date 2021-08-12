@@ -28,21 +28,21 @@ class Dog {
     name: r'className',
     required: true,
   )
-  String? className;
+  String className;
 
   @JsonKey(
     defaultValue: 'red',
     name: r'color',
     required: false,
   )
-  String? color;
+  String color;
 
   @JsonKey(
     
     name: r'breed',
     required: false,
   )
-  String? breed;
+  String breed;
 
   @override
   bool operator ==(Object other) => identical(this, other) || other is Dog &&

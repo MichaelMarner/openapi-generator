@@ -24,7 +24,7 @@ class Foo {
     name: r'bar',
     required: false,
   )
-  String? bar;
+  String bar;
 
   @override
   bool operator ==(Object other) => identical(this, other) || other is Foo &&

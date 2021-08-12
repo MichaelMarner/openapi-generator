@@ -25,14 +25,14 @@ class EnumArrays {
     name: r'just_symbol',
     required: false,
   )
-  EnumArraysJustSymbolEnum? justSymbol;
+  EnumArraysJustSymbolEnum justSymbol;
 
   @JsonKey(
     
     name: r'array_enum',
     required: false,
   )
-  List<EnumArraysArrayEnumEnum>? arrayEnum;
+  List<EnumArraysArrayEnumEnum> arrayEnum;
 
   @override
   bool operator ==(Object other) => identical(this, other) || other is EnumArrays &&

@@ -28,28 +28,28 @@ class ObjectWithDeprecatedFields {
     name: r'uuid',
     required: false,
   )
-  String? uuid;
+  String uuid;
 
   @JsonKey(
     
     name: r'id',
     required: false,
   )
-  num? id;
+  num id;
 
   @JsonKey(
     
     name: r'deprecatedRef',
     required: false,
   )
-  DeprecatedObject? deprecatedRef;
+  DeprecatedObject deprecatedRef;
 
   @JsonKey(
     
     name: r'bars',
     required: false,
   )
-  List<String>? bars;
+  List<String> bars;
 
   @override
   bool operator ==(Object other) => identical(this, other) || other is ObjectWithDeprecatedFields &&

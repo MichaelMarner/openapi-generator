@@ -24,7 +24,7 @@ class SpecialModelName {
     name: r'$special[property.name]',
     required: false,
   )
-  int? dollarSpecialLeftSquareBracketPropertyPeriodNameRightSquareBracket;
+  int dollarSpecialLeftSquareBracketPropertyPeriodNameRightSquareBracket;
 
   @override
   bool operator ==(Object other) => identical(this, other) || other is SpecialModelName &&

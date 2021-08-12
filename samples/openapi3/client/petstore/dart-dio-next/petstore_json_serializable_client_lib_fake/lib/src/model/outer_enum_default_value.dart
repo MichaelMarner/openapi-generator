@@ -4,7 +4,7 @@
 
 
 
-enum  {
+enum OuterEnumDefaultValue {
   placed,
   approved,
   delivered,

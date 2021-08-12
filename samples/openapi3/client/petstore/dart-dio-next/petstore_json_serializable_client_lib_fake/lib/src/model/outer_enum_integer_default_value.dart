@@ -4,7 +4,7 @@
 
 
 
-enum  {
+enum OuterEnumIntegerDefaultValue {
   number0,
   number1,
   number2,

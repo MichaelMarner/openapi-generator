@@ -31,49 +31,49 @@ class User {
     name: r'id',
     required: false,
   )
-  int? id;
+  int id;
 
   @JsonKey(
     
     name: r'username',
     required: false,
   )
-  String? username;
+  String username;
 
   @JsonKey(
     
     name: r'firstName',
     required: false,
   )
-  String? firstName;
+  String firstName;
 
   @JsonKey(
     
     name: r'lastName',
     required: false,
   )
-  String? lastName;
+  String lastName;
 
   @JsonKey(
     
     name: r'email',
     required: false,
   )
-  String? email;
+  String email;
 
   @JsonKey(
     
     name: r'password',
     required: false,
   )
-  String? password;
+  String password;
 
   @JsonKey(
     
     name: r'phone',
     required: false,
   )
-  String? phone;
+  String phone;
 
       /// User Status
   @JsonKey(
@@ -81,7 +81,7 @@ class User {
     name: r'userStatus',
     required: false,
   )
-  int? userStatus;
+  int userStatus;
 
   @override
   bool operator ==(Object other) => identical(this, other) || other is User &&
