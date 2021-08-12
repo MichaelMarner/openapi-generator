@@ -132,22 +132,22 @@ void main() {
         );
 
         final response = await client.getPetApi().addPet(
-            pet: Pet((p) => p
+            pet: Pet()
               ..id = 5
               ..name = 'Paula'
               ..status = PetStatusEnum.sold
-              ..category = (CategoryBuilder()
-                ..id = 1
-                ..name = 'dog')
-              ..photoUrls = SetBuilder<String>(<String>[photo1, photo2])
-              ..tags = ListBuilder<Tag>(<Tag>[
-                Tag((t) => t
+              ..category = Category()
+              ..id = 1
+              ..name = 'dog'
+              ..photoUrls = Set<String>.from(<String>[photo1, photo2])
+              ..tags = <Tag>[
+                Tag()
                   ..id = 3
-                  ..name = 'smart'),
-                Tag((t) => t
+                  ..name = 'smart',
+                Tag()
                   ..id = 4
-                  ..name = 'cute'),
-              ])));
+                  ..name = 'cute',
+              ]);
 
         expect(response.statusCode, 200);
       });
@@ -168,9 +168,9 @@ void main() {
         );
 
         final response = await client.getPetApi().addPet(
-            pet: Pet((p) => p
+            pet: Pet()
               ..id = 5
-              ..name = 'Paula'));
+              ..name = 'Paula');
 
         expect(response.statusCode, 200);
       });
@@ -211,11 +211,11 @@ void main() {
         );
 
         final response = await client.getPetApi().findPetsByStatus(
-              status: ListBuilder<String>(<String>[
-                PetStatusEnum.available.name,
-                PetStatusEnum.sold.name,
-              ]).build(),
-            );
+          status: <String>[
+            'available',
+            'sold',
+          ],
+        );
 
         expect(response.statusCode, 200);
         expect(response.data, isNotNull);

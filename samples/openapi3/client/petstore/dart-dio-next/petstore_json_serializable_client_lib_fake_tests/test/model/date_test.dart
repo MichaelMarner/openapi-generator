@@ -2,10 +2,10 @@ import 'package:openapi/openapi.dart';
 import 'package:test/test.dart';
 
 void main() {
-  final date1 = Date(1999, 3, 25);
-  final date2 = Date(1999, 1, 1);
+  final date1 = DateTime(1999, 3, 25);
+  final date2 = DateTime(1999, 1, 1);
 
-  group(Date, () {
+  group(DateTime, () {
     test('toString', () {
       expect(date1.toString(), '1999-03-25');
     });
