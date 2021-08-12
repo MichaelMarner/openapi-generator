@@ -169,7 +169,8 @@ void main() {
         final response = await client.getPetApi().addPet(
             pet: Pet()
               ..id = 5
-              ..name = 'Paula');
+              ..name = 'Paula'
+              ..photoUrls = Set<String>());
 
         expect(response.statusCode, 200);
       });
