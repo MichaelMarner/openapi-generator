@@ -16,9 +16,9 @@ part 'outer_composite.g.dart';
 class OuterComposite {
   /// Returns a new [OuterComposite] instance.
   OuterComposite({
-    this.myNumber,
-    this.myString,
-    this.myBoolean,
+    required this.myNumber,
+    required this.myString,
+    required this.myBoolean,
   });
 
   @JsonKey(

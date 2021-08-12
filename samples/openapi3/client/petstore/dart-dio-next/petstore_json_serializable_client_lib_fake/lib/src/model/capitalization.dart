@@ -16,12 +16,12 @@ part 'capitalization.g.dart';
 class Capitalization {
   /// Returns a new [Capitalization] instance.
   Capitalization({
-    this.smallCamel,
-    this.capitalCamel,
-    this.smallSnake,
-    this.capitalSnake,
-    this.sCAETHFlowPoints,
-    this.ATT_NAME,
+    required this.smallCamel,
+    required this.capitalCamel,
+    required this.smallSnake,
+    required this.capitalSnake,
+    required this.sCAETHFlowPoints,
+    required this.ATT_NAME,
   });
 
   @JsonKey(

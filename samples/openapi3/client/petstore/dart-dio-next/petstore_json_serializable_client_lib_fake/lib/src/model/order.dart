@@ -16,11 +16,11 @@ part 'order.g.dart';
 class Order {
   /// Returns a new [Order] instance.
   Order({
-    this.id,
-    this.petId,
-    this.quantity,
-    this.shipDate,
-    this.status,
+    required this.id,
+    required this.petId,
+    required this.quantity,
+    required this.shipDate,
+    required this.status,
     this.complete = false,
   });
 

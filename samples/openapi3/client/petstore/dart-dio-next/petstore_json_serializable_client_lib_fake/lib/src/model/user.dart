@@ -16,14 +16,14 @@ part 'user.g.dart';
 class User {
   /// Returns a new [User] instance.
   User({
-    this.id,
-    this.username,
-    this.firstName,
-    this.lastName,
-    this.email,
-    this.password,
-    this.phone,
-    this.userStatus,
+    required this.id,
+    required this.username,
+    required this.firstName,
+    required this.lastName,
+    required this.email,
+    required this.password,
+    required this.phone,
+    required this.userStatus,
   });
 
   @JsonKey(

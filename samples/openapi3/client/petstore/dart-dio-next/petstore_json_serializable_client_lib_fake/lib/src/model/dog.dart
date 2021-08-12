@@ -20,7 +20,7 @@ class Dog {
   Dog({
     required this.className,
     this.color = 'red',
-    this.breed,
+    required this.breed,
   });
 
   @JsonKey(

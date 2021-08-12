@@ -17,8 +17,8 @@ part 'file_schema_test_class.g.dart';
 class FileSchemaTestClass {
   /// Returns a new [FileSchemaTestClass] instance.
   FileSchemaTestClass({
-    this.file,
-    this.files,
+    required this.file,
+    required this.files,
   });
 
   @JsonKey(

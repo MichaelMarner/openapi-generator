@@ -16,7 +16,7 @@ part 'file.g.dart';
 class File {
   /// Returns a new [File] instance.
   File({
-    this.sourceURI,
+    required this.sourceURI,
   });
 
       /// Test capitalization

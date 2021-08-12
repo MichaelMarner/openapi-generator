@@ -16,9 +16,9 @@ part 'api_response.g.dart';
 class ApiResponse {
   /// Returns a new [ApiResponse] instance.
   ApiResponse({
-    this.code,
-    this.type,
-    this.message,
+    required this.code,
+    required this.type,
+    required this.message,
   });
 
   @JsonKey(

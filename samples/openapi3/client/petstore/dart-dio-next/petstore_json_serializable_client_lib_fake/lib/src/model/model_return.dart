@@ -16,7 +16,7 @@ part 'model_return.g.dart';
 class ModelReturn {
   /// Returns a new [ModelReturn] instance.
   ModelReturn({
-    this.return_,
+    required this.return_,
   });
 
   @JsonKey(

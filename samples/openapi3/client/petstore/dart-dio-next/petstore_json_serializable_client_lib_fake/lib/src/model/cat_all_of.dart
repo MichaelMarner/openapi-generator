@@ -16,7 +16,7 @@ part 'cat_all_of.g.dart';
 class CatAllOf {
   /// Returns a new [CatAllOf] instance.
   CatAllOf({
-    this.declawed,
+    required this.declawed,
   });
 
   @JsonKey(

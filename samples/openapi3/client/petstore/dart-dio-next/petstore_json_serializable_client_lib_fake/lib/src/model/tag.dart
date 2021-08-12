@@ -16,8 +16,8 @@ part 'tag.g.dart';
 class Tag {
   /// Returns a new [Tag] instance.
   Tag({
-    this.id,
-    this.name,
+    required this.id,
+    required this.name,
   });
 
   @JsonKey(

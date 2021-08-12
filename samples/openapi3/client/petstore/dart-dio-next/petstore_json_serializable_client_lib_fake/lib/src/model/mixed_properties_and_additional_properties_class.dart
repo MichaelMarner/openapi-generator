@@ -17,9 +17,9 @@ part 'mixed_properties_and_additional_properties_class.g.dart';
 class MixedPropertiesAndAdditionalPropertiesClass {
   /// Returns a new [MixedPropertiesAndAdditionalPropertiesClass] instance.
   MixedPropertiesAndAdditionalPropertiesClass({
-    this.uuid,
-    this.dateTime,
-    this.map,
+    required this.uuid,
+    required this.dateTime,
+    required this.map,
   });
 
   @JsonKey(

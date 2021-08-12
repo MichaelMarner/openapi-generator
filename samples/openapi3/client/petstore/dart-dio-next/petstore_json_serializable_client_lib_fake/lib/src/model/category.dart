@@ -16,7 +16,7 @@ part 'category.g.dart';
 class Category {
   /// Returns a new [Category] instance.
   Category({
-    this.id,
+    required this.id,
     this.name = 'default-name',
   });
 

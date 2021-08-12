@@ -17,10 +17,10 @@ part 'object_with_deprecated_fields.g.dart';
 class ObjectWithDeprecatedFields {
   /// Returns a new [ObjectWithDeprecatedFields] instance.
   ObjectWithDeprecatedFields({
-    this.uuid,
-    this.id,
-    this.deprecatedRef,
-    this.bars,
+    required this.uuid,
+    required this.id,
+    required this.deprecatedRef,
+    required this.bars,
   });
 
   @JsonKey(

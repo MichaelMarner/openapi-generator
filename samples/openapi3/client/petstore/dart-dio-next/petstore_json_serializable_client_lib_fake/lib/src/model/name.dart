@@ -17,9 +17,9 @@ class Name {
   /// Returns a new [Name] instance.
   Name({
     required this.name,
-    this.snakeCase,
-    this.property,
-    this.n123number,
+    required this.snakeCase,
+    required this.property,
+    required this.n123number,
   });
 
   @JsonKey(

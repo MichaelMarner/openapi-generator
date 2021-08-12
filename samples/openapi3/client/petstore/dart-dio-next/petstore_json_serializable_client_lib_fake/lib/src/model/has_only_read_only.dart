@@ -16,8 +16,8 @@ part 'has_only_read_only.g.dart';
 class HasOnlyReadOnly {
   /// Returns a new [HasOnlyReadOnly] instance.
   HasOnlyReadOnly({
-    this.bar,
-    this.foo,
+    required this.bar,
+    required this.foo,
   });
 
   @JsonKey(

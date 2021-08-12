@@ -18,12 +18,12 @@ part 'pet.g.dart';
 class Pet {
   /// Returns a new [Pet] instance.
   Pet({
-    this.id,
-    this.category,
+    required this.id,
+    required this.category,
     required this.name,
     required this.photoUrls,
-    this.tags,
-    this.status,
+    required this.tags,
+    required this.status,
   });
 
   @JsonKey(

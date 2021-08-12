@@ -17,7 +17,7 @@ part 'inline_response_default.g.dart';
 class InlineResponseDefault {
   /// Returns a new [InlineResponseDefault] instance.
   InlineResponseDefault({
-    this.string,
+    required this.string,
   });
 
   @JsonKey(

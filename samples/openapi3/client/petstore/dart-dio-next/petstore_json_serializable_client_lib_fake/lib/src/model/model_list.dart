@@ -16,7 +16,7 @@ part 'model_list.g.dart';
 class ModelList {
   /// Returns a new [ModelList] instance.
   ModelList({
-    this.n123list,
+    required this.n123list,
   });
 
   @JsonKey(

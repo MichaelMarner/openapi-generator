@@ -16,8 +16,8 @@ part 'additional_properties_class.g.dart';
 class AdditionalPropertiesClass {
   /// Returns a new [AdditionalPropertiesClass] instance.
   AdditionalPropertiesClass({
-    this.mapProperty,
-    this.mapOfMapProperty,
+    required this.mapProperty,
+    required this.mapOfMapProperty,
   });
 
   @JsonKey(

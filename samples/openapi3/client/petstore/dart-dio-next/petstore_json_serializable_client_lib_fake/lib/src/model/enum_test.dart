@@ -20,14 +20,14 @@ part 'enum_test.g.dart';
 class EnumTest {
   /// Returns a new [EnumTest] instance.
   EnumTest({
-    this.enumString,
+    required this.enumString,
     required this.enumStringRequired,
-    this.enumInteger,
-    this.enumNumber,
+    required this.enumInteger,
+    required this.enumNumber,
     this.outerEnum,
-    this.outerEnumInteger,
-    this.outerEnumDefaultValue,
-    this.outerEnumIntegerDefaultValue,
+    required this.outerEnumInteger,
+    required this.outerEnumDefaultValue,
+    required this.outerEnumIntegerDefaultValue,
   });
 
   @JsonKey(

@@ -16,7 +16,7 @@ part 'deprecated_object.g.dart';
 class DeprecatedObject {
   /// Returns a new [DeprecatedObject] instance.
   DeprecatedObject({
-    this.name,
+    required this.name,
   });
 
   @JsonKey(

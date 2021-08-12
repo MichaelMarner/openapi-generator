@@ -17,9 +17,9 @@ part 'array_test.g.dart';
 class ArrayTest {
   /// Returns a new [ArrayTest] instance.
   ArrayTest({
-    this.arrayOfString,
-    this.arrayArrayOfInteger,
-    this.arrayArrayOfModel,
+    required this.arrayOfString,
+    required this.arrayArrayOfInteger,
+    required this.arrayArrayOfModel,
   });
 
   @JsonKey(

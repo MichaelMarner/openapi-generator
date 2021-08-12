@@ -16,8 +16,8 @@ part 'model200_response.g.dart';
 class Model200Response {
   /// Returns a new [Model200Response] instance.
   Model200Response({
-    this.name,
-    this.class_,
+    required this.name,
+    required this.class_,
   });
 
   @JsonKey(

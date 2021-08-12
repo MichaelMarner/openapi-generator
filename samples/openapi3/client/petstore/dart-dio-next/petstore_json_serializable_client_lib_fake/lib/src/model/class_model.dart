@@ -16,7 +16,7 @@ part 'class_model.g.dart';
 class ClassModel {
   /// Returns a new [ClassModel] instance.
   ClassModel({
-    this.class_,
+    required this.class_,
   });
 
   @JsonKey(

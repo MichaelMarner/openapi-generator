@@ -24,10 +24,10 @@ class NullableClass {
     this.datetimeProp,
     this.arrayNullableProp,
     this.arrayAndItemsNullableProp,
-    this.arrayItemsNullable,
+    required this.arrayItemsNullable,
     this.objectNullableProp,
     this.objectAndItemsNullableProp,
-    this.objectItemsNullable,
+    required this.objectItemsNullable,
   });
 
   @JsonKey(

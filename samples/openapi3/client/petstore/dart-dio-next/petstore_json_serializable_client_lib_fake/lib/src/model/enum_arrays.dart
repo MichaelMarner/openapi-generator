@@ -16,8 +16,8 @@ part 'enum_arrays.g.dart';
 class EnumArrays {
   /// Returns a new [EnumArrays] instance.
   EnumArrays({
-    this.justSymbol,
-    this.arrayEnum,
+    required this.justSymbol,
+    required this.arrayEnum,
   });
 
   @JsonKey(

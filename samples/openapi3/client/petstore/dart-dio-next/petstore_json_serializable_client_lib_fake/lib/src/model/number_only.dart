@@ -16,7 +16,7 @@ part 'number_only.g.dart';
 class NumberOnly {
   /// Returns a new [NumberOnly] instance.
   NumberOnly({
-    this.justNumber,
+    required this.justNumber,
   });
 
   @JsonKey(

@@ -16,7 +16,7 @@ part 'client.g.dart';
 class Client {
   /// Returns a new [Client] instance.
   Client({
-    this.client,
+    required this.client,
   });
 
   @JsonKey(

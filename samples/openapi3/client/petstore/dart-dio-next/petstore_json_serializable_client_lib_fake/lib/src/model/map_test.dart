@@ -16,10 +16,10 @@ part 'map_test.g.dart';
 class MapTest {
   /// Returns a new [MapTest] instance.
   MapTest({
-    this.mapMapOfString,
-    this.mapOfEnumString,
-    this.directMap,
-    this.indirectMap,
+    required this.mapMapOfString,
+    required this.mapOfEnumString,
+    required this.directMap,
+    required this.indirectMap,
   });
 
   @JsonKey(

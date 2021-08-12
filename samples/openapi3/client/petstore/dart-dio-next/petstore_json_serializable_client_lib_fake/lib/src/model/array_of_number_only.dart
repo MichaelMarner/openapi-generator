@@ -16,7 +16,7 @@ part 'array_of_number_only.g.dart';
 class ArrayOfNumberOnly {
   /// Returns a new [ArrayOfNumberOnly] instance.
   ArrayOfNumberOnly({
-    this.arrayNumber,
+    required this.arrayNumber,
   });
 
   @JsonKey(

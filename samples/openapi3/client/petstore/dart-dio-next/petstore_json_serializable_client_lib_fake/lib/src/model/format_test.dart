@@ -17,22 +17,22 @@ part 'format_test.g.dart';
 class FormatTest {
   /// Returns a new [FormatTest] instance.
   FormatTest({
-    this.integer,
-    this.int32,
-    this.int64,
+    required this.integer,
+    required this.int32,
+    required this.int64,
     required this.number,
-    this.float,
-    this.double_,
-    this.decimal,
-    this.string,
+    required this.float,
+    required this.double_,
+    required this.decimal,
+    required this.string,
     required this.byte,
-    this.binary,
+    required this.binary,
     required this.date,
-    this.dateTime,
-    this.uuid,
+    required this.dateTime,
+    required this.uuid,
     required this.password,
-    this.patternWithDigits,
-    this.patternWithDigitsAndDelimiter,
+    required this.patternWithDigits,
+    required this.patternWithDigitsAndDelimiter,
   });
 
           // minimum: 10

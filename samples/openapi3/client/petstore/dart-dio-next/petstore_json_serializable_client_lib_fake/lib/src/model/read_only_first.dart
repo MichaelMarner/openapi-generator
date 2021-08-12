@@ -16,8 +16,8 @@ part 'read_only_first.g.dart';
 class ReadOnlyFirst {
   /// Returns a new [ReadOnlyFirst] instance.
   ReadOnlyFirst({
-    this.bar,
-    this.baz,
+    required this.bar,
+    required this.baz,
   });
 
   @JsonKey(

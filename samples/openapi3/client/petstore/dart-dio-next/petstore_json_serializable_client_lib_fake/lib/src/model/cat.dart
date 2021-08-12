@@ -20,7 +20,7 @@ class Cat {
   Cat({
     required this.className,
     this.color = 'red',
-    this.declawed,
+    required this.declawed,
   });
 
   @JsonKey(

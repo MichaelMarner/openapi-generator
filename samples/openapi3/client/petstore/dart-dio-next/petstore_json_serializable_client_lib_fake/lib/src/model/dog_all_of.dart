@@ -16,7 +16,7 @@ part 'dog_all_of.g.dart';
 class DogAllOf {
   /// Returns a new [DogAllOf] instance.
   DogAllOf({
-    this.breed,
+    required this.breed,
   });
 
   @JsonKey(
