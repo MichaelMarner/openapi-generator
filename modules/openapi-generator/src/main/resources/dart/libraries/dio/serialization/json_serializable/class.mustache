@@ -34,7 +34,8 @@ class {{{classname}}} {
   @JsonKey(ignore: true)
   {{/isBinary}}
   {{#required}}
-    final {{{datatypeWithEnum}}}{{^isNullable}}?{{/isNullable}} {{{name}}};
+  {{! JSONSerializable doesn't play nice with required binaries so these are always made optional}}
+    final {{{datatypeWithEnum}}}{{^isBinary}}?{{/isBinary}}{{#isBinary}}{{^isNullable}}?{{/isNullable}}{{/isBinary}} {{{name}}};
   {{/required}}{{^required}}
     final {{{datatypeWithEnum}}}? {{{name}}};
   {{/required}}

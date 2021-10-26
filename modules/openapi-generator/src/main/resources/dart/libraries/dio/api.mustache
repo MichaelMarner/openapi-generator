@@ -96,7 +96,7 @@ class {{classname}} {
 
     try {
 {{#useBuiltValue}}{{>serialization/built_value/serialize}}{{/useBuiltValue}}
-{{#useJsonSerializable}}{{#bodyParam}}_bodyData=jsonEncode({{{paramName}}});{{/bodyParam}}{{/useJsonSerializable}}
+{{#useJsonSerializable}}{{>serialization/json_serializable/serialize}}{{/useJsonSerializable}}
     } catch(error, stackTrace) {
       throw DioError(
          requestOptions: _options.compose(

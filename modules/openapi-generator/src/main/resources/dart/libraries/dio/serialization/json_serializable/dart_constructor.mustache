@@ -2,9 +2,13 @@
   {{{classname}}}({
   {{#vars}}
     {{!
-        A field is @required in Dart when it is
-        required && !nullable && !defaultValue in OAS
+        A field is required in Dart 2.12 (sound null safety) unless it is (in OAS):
+        - nullable
+        - required
+        - has default value
+        Furtther, JSONSerializable doesn't play nice with required binaries
+        so these are always made optional
     }}
-    {{#required}}{{^isNullable}}{{^defaultValue}}required {{/defaultValue}}{{/isNullable}}{{/required}}this.{{{name}}}{{^isNullable}}{{#defaultValue}} = {{#isEnum}}{{^isContainer}}const {{{enumName}}}._({{/isContainer}}{{/isEnum}}{{{defaultValue}}}{{#isEnum}}{{^isContainer}}){{/isContainer}}{{/isEnum}}{{/defaultValue}}{{/isNullable}},
+    {{^isBinary}}{{^defaultValue}}{{#required}}required{{/required}}{{^required}}{{^isNullable}}required{{/isNullable}}{{/required}}{{/defaultValue}}{{/isBinary}} this.{{{name}}}{{^isNullable}}{{#defaultValue}} = {{#isEnum}}{{^isContainer}}const {{{enumName}}}._({{/isContainer}}{{/isEnum}}{{{defaultValue}}}{{#isEnum}}{{^isContainer}}){{/isContainer}}{{/isEnum}}{{/defaultValue}}{{/isNullable}},
   {{/vars}}
   });

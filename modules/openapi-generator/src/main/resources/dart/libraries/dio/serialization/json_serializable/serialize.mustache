@@ -1,0 +1,17 @@
+{{#bodyParam}}
+{{#isPrimitiveType}}
+_bodyData = {{paramName}};
+{{/isPrimitiveType}}
+{{^isPrimitiveType}}
+_bodyData=jsonEncode({{{paramName}}});
+{{/isPrimitiveType}}
+{{/bodyParam}}
+{{^bodyParam}}
+{{#hasFormParams}}
+_bodyData = {{#isMultipart}}FormData.fromMap({{/isMultipart}}<String, dynamic>{
+  {{#formParams}}
+  {{^required}}{{^nullable}}if ({{{paramName}}} != null) {{/nullable}}{{/required}}r'{{{baseName}}}': {{#isFile}}{{{paramName}}}{{/isFile}}{{^isFile}} {{#isPrimitiveType}}{{{paramName}}}{{/isPrimitiveType}}{{^isPrimitiveType}}jsonEncode({{{paramName}}}){{/isPrimitiveType}} {{/isFile}},
+  {{/formParams}}
+}{{#isMultipart}}){{/isMultipart}};
+{{/hasFormParams}}
+{{/bodyParam}}
