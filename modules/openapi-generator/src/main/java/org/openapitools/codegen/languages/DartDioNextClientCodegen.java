@@ -261,7 +261,7 @@ public class DartDioNextClientCodegen extends AbstractDartCodegen {
         // just the binary / file handling
         languageSpecificPrimitives.add("Object");
         imports.put("Uint8List", "dart:typed_data");
-        imports.put("MultipartFile", DIO_IMPORT);
+        imports.put("MultipartFile", dioImport);
     }
 
     private void configureDateLibrary(String srcFolder) {
@@ -400,6 +400,7 @@ public class DartDioNextClientCodegen extends AbstractDartCodegen {
                 if (op.getHasFormParams() || op.getHasQueryParams()) {
                     resultImports.add("package:" + pubName + "/src/api_util.dart");
                 }
+            }
 
             // Generate serializer factories for response types.
             // But skip binary and file response, JSON serializers don't make sense there.
