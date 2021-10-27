@@ -1,6 +1,11 @@
 {{>header}}
 import 'dart:async';
 
+{{#useJsonSerializable}}
+import 'dart:convert';
+import 'package:{{pubName}}/src/deserialize.dart';
+{{/useJsonSerializable}}
+
 {{#useBuiltValue}}import 'package:built_value/serializer.dart';{{/useBuiltValue}}
 import '{{dioImport}}';
 
