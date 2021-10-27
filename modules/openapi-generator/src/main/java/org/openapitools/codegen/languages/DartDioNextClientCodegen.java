@@ -399,10 +399,11 @@ public class DartDioNextClientCodegen extends AbstractDartCodegen {
                     serializer.put("baseType", param.baseType);
                     serializers.add(serializer);
                 }
+            }
 
-                if (op.getHasFormParams() || op.getHasQueryParams()) {
-                    resultImports.add("package:" + pubName + "/src/api_util.dart");
-                }
+            resultImports.addAll(rewriteImports(op.imports, false));
+            if (op.getHasFormParams() || op.getHasQueryParams()) {
+                resultImports.add("package:" + pubName + "/src/api_util.dart");
             }
 
             // Generate serializer factories for response types.
