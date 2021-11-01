@@ -9,7 +9,7 @@ final _regSet = RegExp(r'^Set<(.*)>$');
 final _regMap = RegExp(r'^Map<String,(.*)>$');
 
   ReturnType deserialize<ReturnType, BaseType>(dynamic value, String targetType, {bool growable= true}) {
-      switch (targetType) {
+      switch (targetType.trim()) {
         case 'String':
           return '$value' as ReturnType;
         case 'int':
